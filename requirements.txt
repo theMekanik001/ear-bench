@@ -1,0 +1,6 @@
+faster-whisper==1.2.1
+numpy
+# NOTE: PyAV (av) arrives as a faster-whisper dependency and is used ONLY
+# for the non-WAV fallback decode in fw_transcribe.py. The bench pipeline
+# always feeds 16 kHz mono WAV, which fw_transcribe.py decodes with the
+# stdlib, so transcription does not depend on PyAV's API surface.
